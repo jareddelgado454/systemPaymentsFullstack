@@ -1,6 +1,7 @@
 package com.lta.systemPayments.services;
 
 import java.io.IOException;
+import java.net.URI;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -52,6 +53,19 @@ public class PaymentService {
         .file(filePath.toUri().toString())
         .build();
 
+        return paymentRepository.save(payment);
+    }
+
+    public byte[] getFileById(Long paymentId) throws IOException{
+
+        Payment payment = paymentRepository.findById(paymentId).get();
+
+        return Files.readAllBytes(Path.of(URI.create(payment.getFile()))); 
+    }
+
+    public Payment updateStatusPayment(PaymentStatus paymentStatus, Long id){
+        Payment payment = paymentRepository.findById(id).get();
+        payment.setStatus(paymentStatus);
         return paymentRepository.save(payment);
     }
 }
