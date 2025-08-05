@@ -24,7 +24,7 @@ import lombok.NoArgsConstructor;
 public class Payment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String Id;
+    private Long id;
 
     private LocalDate date;
 
