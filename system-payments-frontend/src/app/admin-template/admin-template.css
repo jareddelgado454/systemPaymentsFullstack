@@ -1,0 +1,21 @@
+
+mat-toolbar {
+  background-color: #5a6263;
+  color: white; 
+}
+
+mat-toolbar button {
+  color: white; 
+}
+
+mat-toolbar mat-icon {
+  color: white; 
+}
+
+mat-menu {
+  background-color: #5a6263; 
+}
+
+mat-menu button {
+  color: white;
+}
