@@ -10,11 +10,28 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
+import {MatCardModule} from '@angular/material/card';
+import { Home } from './home/home';
+import { Profile } from './profile/profile';
+import { LoadStudents } from './load-students/load-students';
+import { LoadPayments } from './load-payments/load-payments';
+import { Login } from './login/login';
+import { Payments } from './payments/payments';
+import { Students } from './students/students';
+import { Dashboard } from './dashboard/dashboard';
 
 @NgModule({
   declarations: [
     App,
-    AdminTemplate
+    AdminTemplate,
+    Home,
+    Profile,
+    LoadStudents,
+    LoadPayments,
+    Login,
+    Payments,
+    Students,
+    Dashboard
   ],
   imports: [
     BrowserModule,
@@ -24,7 +41,8 @@ import {MatListModule} from '@angular/material/list';
     MatIconModule,
     MatMenuModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    MatCardModule
   ],
   providers: [
     provideBrowserGlobalErrorListeners()

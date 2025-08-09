@@ -1,12 +1,12 @@
 <mat-toolbar>
-    <button matButton>
+    <button matButton (click)="myDrawer.toggle()">
         <mat-icon>menu</mat-icon>
     </button>
 
     <span style="flex: auto;"></span>
 
-    <button matButton>Home</button>
-    <button matButton>Profile</button>
+    <button matButton routerLink="/home">Home</button>
+    <button matButton routerLink="/profile">Profile</button>
 
     <button matButton [matMenuTriggerFor] = "importMenu">
         <mat-icon iconPositionEnd>keyboard_arrow_down</mat-icon>
@@ -14,25 +14,39 @@
     </button>
 
     <mat-menu #importMenu="matMenu">
-        <button mat-menu-item>Load Students</button>
-        <button mat-menu-item>Load Payments</button>
+        <button mat-menu-item routerLink="/loadStudents">Load Students</button>
+        <button mat-menu-item routerLink="/loadPayments">Load Payments</button>
     </mat-menu>
 
-    <button style="background-color: tomato;" mat-raised-button>Salir</button>
+    <button style="background-color: tomato;" mat-raised-button routerLink="/login">Exit</button>
 </mat-toolbar>
 
 <mat-drawer-container>
-    <mat-drawer opened="true" mode="side" position="start">
+    <mat-drawer #myDrawer opened="true" mode="side" position="start">
         <mat-list>
             <mat-list-item>
-                <button matButton>Students</button>
+                <button matButton routerLink="/dashboard">
+                    <mat-icon>dashboard</mat-icon>
+                    Dashboard
+                </button>
             </mat-list-item>
             <mat-list-item>
-                <button matButton>Payments</button>
+                <button matButton routerLink="/students">
+                    <mat-icon>dashboard</mat-icon>
+                    Students
+                </button>
+            </mat-list-item>
+            <mat-list-item>
+                <button matButton routerLink="/payments">
+                    <mat-icon>dashboard</mat-icon>
+                    Payments
+                </button>
             </mat-list-item>
         </mat-list>
     </mat-drawer>
     <mat-drawer-content>
-        <div style="min-height: 600px;"></div>
+        <div style="min-height: 600px;">
+            <router-outlet></router-outlet>
+        </div>
     </mat-drawer-content>
 </mat-drawer-container>
