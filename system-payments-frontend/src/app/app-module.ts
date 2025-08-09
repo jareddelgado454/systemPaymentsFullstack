@@ -11,6 +11,8 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
 import {MatCardModule} from '@angular/material/card';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
 import { Home } from './home/home';
 import { Profile } from './profile/profile';
 import { LoadStudents } from './load-students/load-students';
@@ -42,7 +44,9 @@ import { Dashboard } from './dashboard/dashboard';
     MatMenuModule,
     MatSidenavModule,
     MatListModule,
-    MatCardModule
+    MatCardModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [
     provideBrowserGlobalErrorListeners()
